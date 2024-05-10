@@ -28,5 +28,4 @@ jobs:
               
     - name: Build the Docker image
       run: |
-        docker build --platform linux/amd64,linux/arm64 --tag ghcr.io/eliotstocker/alpine-tinnel-container:latest .
-        docker push ghcr.io/eliotstocker/alpine-tinnel-container:latest
+        docker buildx build --platform linux/amd64,linux/arm64 --tag ghcr.io/eliotstocker/alpine-tinnel-container:latest --push .
