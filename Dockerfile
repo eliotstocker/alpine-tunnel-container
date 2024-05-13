@@ -11,6 +11,10 @@ RUN adduser -Ss /bin/sh code
 
 COPY entrypoint.sh /root/entrypoint.sh
 
+ENV TUUNEL_NAME "DEV_TUNNEL_CONTAINER"
+
+ENV TUNNEL_CONFIG_DIR "/ect/code"
+
 ENTRYPOINT "/root/entrypoint.sh"
 
 CMD [ "code", "tunnel", "--accept-server-license-terms" ]
